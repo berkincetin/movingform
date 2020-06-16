@@ -10,3 +10,8 @@
     background-color: #FF5829;
     box-shadow: 0 1px 1px rgb(189, 186, 186);
 }
+
+.truck-icon {
+    display: block;
+    margin: 0 auto 20px auto;
+}

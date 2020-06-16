@@ -1,5 +1,12 @@
+*, html, body {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
   text-align: center;
+  background: #e5e5e5;
+  padding-bottom: 50px;
 }
 
 .App-logo {
@@ -35,4 +42,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.header {
+  background: #fff;
+}
+/* Next buttons stlying */
+.btn-primary:hover {
+  color: #fff;
+  background-color: #FF5829;
+  box-shadow: 0 1px 1px rgb(189, 186, 186);
+  border: 1px solid #FF5829;
+}
+
+.form-wrapper {
+  background: #fff;
+  width: 60%;
+  margin: 0 auto;
 }
