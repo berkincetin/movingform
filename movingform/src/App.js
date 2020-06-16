@@ -10,7 +10,14 @@ const initialState = {
   firstName: '',
   lastName: '',
   email: '',
-  phoneNumber:''
+  phoneNumber:'',
+
+  movingservices: false,
+  supplyservices: false,
+  storageservices: false,
+  packingservices: false,
+  rearrangingservices: false,
+
 }
 
 class App extends Component {
@@ -57,14 +64,44 @@ class App extends Component {
         return <h1>Form Success</h1>
     }
   }
+  validateFormInput(currentStep) {
+    switch(currentStep) {
+      case 2: 
+        if (this.state.firstName ==="" || this.state.lastName ==="" || this.state.phoneNumber ==="" || this.state.email ==="") {
+          console.log(this.state.firstName==="")
+          return false;
+        } else {
+          return true;
+        }
+    }
+  }
 
   _next = () => {
-    let currentStep = this.state.currentStep
-    console.log(this.state);
-    currentStep = currentStep >= 5? 6: currentStep + 1
-    this.setState({
-      currentStep: currentStep
-    })
+    let currentStep = this.state.currentStep;
+    const { 
+              firstName, 
+              lastName, 
+              email, 
+              phoneNumber, 
+          } = this.state
+    console.log("State", this.state);
+    let formValid = this.validateFormInput(currentStep)
+    formValid =true;
+    
+    if (formValid) {
+      currentStep = currentStep >= 5? 6: currentStep + 1
+      this.setState({
+        currentStep: currentStep
+      })
+    } else {
+      alert(`Please enter fill out all the form fields \n
+            First Name: ${firstName} \n
+            Last Name: ${lastName} \n
+            Email: ${email} \n
+            Phone: ${phoneNumber} \n
+      `)
+    }
+
   }
   _prev = () => {
     let currentStep = this.state.currentStep
