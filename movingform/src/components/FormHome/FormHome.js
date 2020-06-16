@@ -1,4 +1,5 @@
 import React, {Component }  from 'react';
+import './FormHome.css'
 
 class FormHome extends Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class FormHome extends Component {
         return (
             <div>
                 <h2 className="mb-2">Let's get you moving!</h2>
-                <p onClick = {() => onRouteChange(2)} className ="btn">Book your move</p>
+                <p onClick = {() => onRouteChange(2)} className ="btn book-your-move">Book your move</p>
             </div>
         )
     }
