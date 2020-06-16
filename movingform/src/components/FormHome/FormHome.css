@@ -1,0 +1,12 @@
+.book-your-move {
+    padding: 10px 20px;
+    background-color:#008AFC;
+    color: #fff;
+}
+
+.book-your-move:hover {
+    cursor: pointer;
+    color: #fff;
+    background-color: #FF5829;
+    box-shadow: 0 1px 1px rgb(189, 186, 186);
+}
