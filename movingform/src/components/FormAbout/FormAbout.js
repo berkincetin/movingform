@@ -6,7 +6,7 @@ class FormAbout extends Component {
     }
 
     render () {
-        const { onRouteChange, handleChange, firstName, lastName, email, phoneNumber } = this.props;
+        const {handleChange, firstName, lastName, email, phoneNumber } = this.props;
         return (
             <div class="form-section">
             <h2 className ="mb-4">Tell us about yourself</h2>

@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import FormHome from './components/FormHome/FormHome';
 import FormAbout from './components/FormAbout/FormAbout';
+import FormServices from './components/FormServices/FormServices';
 
 
 const initialState = {
@@ -12,11 +13,11 @@ const initialState = {
   email: '',
   phoneNumber:'',
 
-  movingservices: false,
-  supplyservices: false,
-  storageservices: false,
-  packingservices: false,
-  rearrangingservices: false,
+  movingServices: false,
+  supplyServices: false,
+  storageServices: false,
+  packingServices: false,
+  rearrangingServices: false,
 
 }
 
@@ -41,6 +42,19 @@ class App extends Component {
     console.log(this.state); 
   }
 
+  handleCheck = event => {
+    const {name,checked} = event.target;
+    console.log("Event Target", event.target)
+    console.log("Name", name); 
+    console.log("Checked", checked); 
+    this.setState({
+      [name]: checked
+    })   
+
+
+    console.log(this.state); 
+  }
+
   renderSwitch(movingFormStep) {
     switch(movingFormStep) {
       case 1:
@@ -55,7 +69,15 @@ class App extends Component {
             phoneNumber={this.state.phoneNumber}
           />
       case 3:
-          return <h1>Form Step 2</h1>
+          return <FormServices 
+          handleCheck={this.handleCheck}
+          movingServices={this.state.movingServices}
+          supplyServices = {this.state.supplyServices}
+          storageServices={this.state.storageServices}
+          packingServices =   {this.state.packingServices}
+          rearrangingServices = {this.state.rearrangingServices}
+          
+          />
       case 4:
           return <h1>Form Step 3</h1>
       case 5:
@@ -69,10 +91,24 @@ class App extends Component {
       case 2: 
         if (this.state.firstName ==="" || this.state.lastName ==="" || this.state.phoneNumber ==="" || this.state.email ==="") {
           console.log(this.state.firstName==="")
+            alert(`Please enter fill out all the form information`)
+
           return false;
         } else {
           return true;
         }
+      case 3:
+        if (this.state.movingServices === false && this.state.supplyServices===false && this.state.storageServices === false && this.state.packingServices === false  && this.state.rearrangingServices ===false) {
+          alert(`Please pick a service`)
+
+          return false;
+        } else {
+          return true;
+        }
+      case 4:
+        return true;
+      case 5:
+        return true;
     }
   }
 
@@ -87,20 +123,13 @@ class App extends Component {
     console.log("State", this.state);
     let formValid = this.validateFormInput(currentStep)
     formValid =true;
-    
+
     if (formValid) {
       currentStep = currentStep >= 5? 6: currentStep + 1
       this.setState({
         currentStep: currentStep
       })
-    } else {
-      alert(`Please enter fill out all the form fields \n
-            First Name: ${firstName} \n
-            Last Name: ${lastName} \n
-            Email: ${email} \n
-            Phone: ${phoneNumber} \n
-      `)
-    }
+    } 
 
   }
   _prev = () => {
@@ -143,7 +172,7 @@ class App extends Component {
     return (
       <div className ="App">
         <Header />
-        <div class="form-wrapper mt-5">
+        <div className="form-wrapper mt-5">
           { this.renderSwitch(currentStep)  }
 
           {this.previousButton()}
