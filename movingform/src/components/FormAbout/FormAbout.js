@@ -8,7 +8,7 @@ class FormAbout extends Component {
     render () {
         const {handleChange, firstName, lastName, email, phoneNumber } = this.props;
         return (
-            <div class="form-section">
+            <div className="form-section">
             <h2 className ="mb-4">Tell us about yourself</h2>
             <div className="form-group form-row row mb-2">
               <div className="col-sm-12">

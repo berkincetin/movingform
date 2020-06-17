@@ -4,7 +4,9 @@ import Header from './components/Header/Header';
 import FormHome from './components/FormHome/FormHome';
 import FormAbout from './components/FormAbout/FormAbout';
 import FormServices from './components/FormServices/FormServices';
-
+import FormCurrentAddress from './components/FormCurrentAddress/FormCurrentAddress';
+import FormDate from './components/FormDate/FormDate';
+import FormSuccess from './components/FormSuccess/FormSucces';
 
 const initialState = {
   currentStep: 1,
@@ -19,6 +21,15 @@ const initialState = {
   packingServices: false,
   rearrangingServices: false,
 
+  movingFromAddress: '',
+  movingFromNumber: '',
+  movingFromStreet: '',
+  movingFromCity: '',
+  movingFromProvince: '',
+  movingFromPostal: '',
+
+  movingDate: '',
+  movingTime: ''
 }
 
 class App extends Component {
@@ -54,6 +65,13 @@ class App extends Component {
 
     console.log(this.state); 
   }
+  handleAddressChange(target, event) {
+    console.log("Address change",target, event);
+    this.setState({
+      target: event
+    });
+    console.log(this.state);
+  }
 
   renderSwitch(movingFormStep) {
     switch(movingFormStep) {
@@ -79,11 +97,20 @@ class App extends Component {
           
           />
       case 4:
-          return <h1>Form Step 3</h1>
+          return <h1>Current Address </h1>
+
       case 5:
-        return <h1>Form Step 4</h1>
+        return <h1>Moving Address</h1>
       case 6:
-        return <h1>Form Success</h1>
+        return <FormDate 
+        handleChange = {this.handleChange}
+        movingDate = {this.state.movingDate}
+        movingTime = {this.state.movingTime}
+        
+        />
+      case 7:
+        return <FormSuccess 
+          _next =  {this._next}/>
     }
   }
   validateFormInput(currentStep) {
@@ -91,7 +118,7 @@ class App extends Component {
       case 2: 
         if (this.state.firstName ==="" || this.state.lastName ==="" || this.state.phoneNumber ==="" || this.state.email ==="") {
           console.log(this.state.firstName==="")
-            alert(`Please enter fill out all the form information`)
+            //alert(`Please enter fill out all the form information`)
 
           return false;
         } else {
@@ -99,7 +126,7 @@ class App extends Component {
         }
       case 3:
         if (this.state.movingServices === false && this.state.supplyServices===false && this.state.storageServices === false && this.state.packingServices === false  && this.state.rearrangingServices ===false) {
-          alert(`Please pick a service`)
+          //alert(`Please pick a service`)
 
           return false;
         } else {
@@ -108,6 +135,8 @@ class App extends Component {
       case 4:
         return true;
       case 5:
+        return true;
+      case 6:
         return true;
     }
   }
@@ -125,7 +154,7 @@ class App extends Component {
     formValid =true;
 
     if (formValid) {
-      currentStep = currentStep >= 5? 6: currentStep + 1
+      currentStep = currentStep >= 7 ? 1: currentStep + 1
       this.setState({
         currentStep: currentStep
       })
@@ -142,7 +171,7 @@ class App extends Component {
 
   previousButton() {
     let currentStep = this.state.currentStep;
-    if(currentStep > 2 && currentStep < 6){
+    if(currentStep > 2 && currentStep < 7){
       return (
         <button 
           className="btn btn-secondary float-left" 
@@ -163,6 +192,16 @@ class App extends Component {
         Next
         </button>        
       )
+    } else if (currentStep == 6) {
+      return (      
+      
+      <button 
+      className="btn  btn-success float-right"
+      type="button" onClick={this._next}>
+      Let's get you moving!
+      </button>
+      )
+
     }
     return null;
   }

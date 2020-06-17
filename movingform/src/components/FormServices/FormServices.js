@@ -7,7 +7,7 @@ class FormServices extends Component {
     render () {
         const { handleCheck, movingServices, supplyServices, storageServices, packingServices, rearrangingServices } = this.props;
         return (
-            <div class="form-section">
+            <div className="form-section">
                 <h2 className ="mb-4">How can All-Rite help you?</h2>
                 <div className="col-12">
           <input 
