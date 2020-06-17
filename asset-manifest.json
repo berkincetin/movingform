@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/movingform/static/css/main.14b526dd.chunk.css",
+    "main.js": "/movingform/static/js/main.60b57f05.chunk.js",
+    "main.js.map": "/movingform/static/js/main.60b57f05.chunk.js.map",
+    "runtime-main.js": "/movingform/static/js/runtime-main.1c9ec415.js",
+    "runtime-main.js.map": "/movingform/static/js/runtime-main.1c9ec415.js.map",
+    "static/js/2.e53d1c6c.chunk.js": "/movingform/static/js/2.e53d1c6c.chunk.js",
+    "static/js/2.e53d1c6c.chunk.js.map": "/movingform/static/js/2.e53d1c6c.chunk.js.map",
+    "index.html": "/movingform/index.html",
+    "precache-manifest.cc95151cc18ab0d72399a02b765bf586.js": "/movingform/precache-manifest.cc95151cc18ab0d72399a02b765bf586.js",
+    "service-worker.js": "/movingform/service-worker.js",
+    "static/css/main.14b526dd.chunk.css.map": "/movingform/static/css/main.14b526dd.chunk.css.map",
+    "static/js/2.e53d1c6c.chunk.js.LICENSE.txt": "/movingform/static/js/2.e53d1c6c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1c9ec415.js",
+    "static/js/2.e53d1c6c.chunk.js",
+    "static/css/main.14b526dd.chunk.css",
+    "static/js/main.60b57f05.chunk.js"
+  ]
+}
