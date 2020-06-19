@@ -6,7 +6,7 @@ import FormAbout from './components/FormAbout/FormAbout';
 import FormServices from './components/FormServices/FormServices';
 import FormCurrentAddress from './components/FormCurrentAddress/FormCurrentAddress';
 import FormDate from './components/FormDate/FormDate';
-import FormSuccess from './components/FormSuccess/FormSucces';
+import FormSuccess from './components/FormSuccess/FormSuccess';
 
 const initialState = {
   currentStep: 1,

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import BoxIcon from './BoxIcon.png';
 class FormSuccess extends Component {
     constructor(props) {
         super(props);
@@ -8,9 +8,12 @@ class FormSuccess extends Component {
         const { _next } = this.props;
         return (
             <div>
+                <img className ="box-icon" src={BoxIcon} alt ='Moving truck icon'></img>
+
                 <h2 className="mb-2">Thanks for submitting a moving request!</h2>
-                <h3 className="mb-2">We're working on it. We'll get you moving in no time!</h3>
-                <p onClick = {_next} className ="btn">Go home</p>
+                <h3 className="mb-4">We're working on it. We'll get you moving in no time!</h3>
+                <p onClick = {_next} className ="btn book-your-move">Go home</p>
+                
             </div>
         )
     }
