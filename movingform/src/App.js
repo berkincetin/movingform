@@ -110,7 +110,6 @@ class App extends Component {
 
 
       case 6:
-
         return <FormReview 
         handleChange = {this.handleChange}
 
@@ -124,7 +123,8 @@ class App extends Component {
         packingServices =   {this.state.packingServices}
         rearrangingServices = {this.state.rearrangingServices}
         
-        
+        movingDate = {this.state.movingDate}
+        movingTime = {this.state.movingTime}
         />
       case 7:
         return <FormSuccess 
