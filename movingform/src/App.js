@@ -7,6 +7,8 @@ import FormServices from './components/FormServices/FormServices';
 import FormCurrentAddress from './components/FormCurrentAddress/FormCurrentAddress';
 import FormDate from './components/FormDate/FormDate';
 import FormSuccess from './components/FormSuccess/FormSuccess';
+import FormReview from './components/FormReview/FormReview';
+
 
 const initialState = {
   currentStep: 1,
@@ -97,15 +99,31 @@ class App extends Component {
           
           />
       case 4:
-          return <h1>Current Address </h1>
-
-      case 5:
-        return <h1>Moving Address</h1>
-      case 6:
         return <FormDate 
         handleChange = {this.handleChange}
         movingDate = {this.state.movingDate}
         movingTime = {this.state.movingTime}
+        
+        />
+      case 5:
+        return <h1>Moving Address</h1>
+
+
+      case 6:
+
+        return <FormReview 
+        handleChange = {this.handleChange}
+
+        firstName={this.state.firstName}
+        lastName={this.state.lastName}
+        email={this.state.email}
+        phoneNumber={this.state.phoneNumber}
+        movingServices={this.state.movingServices}
+        supplyServices = {this.state.supplyServices}
+        storageServices={this.state.storageServices}
+        packingServices =   {this.state.packingServices}
+        rearrangingServices = {this.state.rearrangingServices}
+        
         
         />
       case 7:
