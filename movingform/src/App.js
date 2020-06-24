@@ -106,7 +106,7 @@ class App extends Component {
         
         />
       case 5:
-        return <h1>Moving Address</h1>
+        return <FormCurrentAddress />
 
 
       case 6:

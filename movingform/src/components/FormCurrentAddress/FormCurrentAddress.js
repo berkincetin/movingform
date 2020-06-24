@@ -7,8 +7,10 @@ const google = window.google;
 class FormCurrentAddress extends React.Component {
     constructor(props) {
         super(props)
+        this.state = this.initialState()
         this.handlePlaceSelect = this.handlePlaceSelect.bind(this)
-        this.handleAddressChange = this.handleAddressChange.bind(this)
+        this.handleChange = this.handleChange.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this)
         this.autocomplete = null
     }
     componentDidMount() {
@@ -16,25 +18,25 @@ class FormCurrentAddress extends React.Component {
     
         this.autocomplete.addListener("place_changed", this.handlePlaceSelect)
       }
-    
-      handleAddressChange(event) {
-        console.log("EVENT", event)
+      initialState() {
+        return {
+            inputAddress: ''
+        }
+      }
+      handleChange(event) {
         this.setState({[event.target.name]: event.target.value})
       }
     
+      handleSubmit(event) {
+        event.preventDefault()
+        this.clearForm()
+      }
       handlePlaceSelect() {
         const { handleAddressChange } = this.props;
         let addressObject = this.autocomplete.getPlace()
         let address = addressObject.address_components;
         let addressName = addressObject.formatted_address;
-        console.log(addressObject);
-        console.log(address);
-        console.log(addressName);
-        console.log("STate", this.state)
-        this.setState({
-          movingFromAddress: addressName
-        })
-        handleAddressChange('movingFromAddress',addressName);
+
         // this.setState({
         //   name: addressObject.name,
         //   street_address: `${address[0].long_name} ${address[1].long_name}`,
@@ -46,7 +48,6 @@ class FormCurrentAddress extends React.Component {
       }
     
     render() {
-          const {movingFromAddress, handleChange, movingFromNumber,movingFromStreet, movingFromCity, movingFromProvince, movingFromPostal } = this.props;
         return(
             <div className="form-section">
             <h2 className ="mb-4">What is your current address?</h2>
@@ -55,8 +56,7 @@ class FormCurrentAddress extends React.Component {
                     <input id="autocomplete"
                     className="form-control"
                     name="inputAddress"
-                    value={movingFromAddress}
-                    onChange= {handleChange}
+                    onChange= {this.handleChange}
                     type="text"
                     />
                 </div>
