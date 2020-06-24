@@ -1,5 +1,5 @@
 import React, {Component } from 'react';
-
+import ChecklistIcon from './Checklist.svg';
 class FormServices extends Component {
     constructor(props){
         super(props);
@@ -7,9 +7,11 @@ class FormServices extends Component {
     render () {
         const { handleCheck, movingServices, supplyServices, storageServices, packingServices, rearrangingServices } = this.props;
         return (
-            <div className="form-section">
-                <h2 className ="mb-4">How can All-Rite help you?</h2>
-                <div className="col-12">
+          <div className="form-section">
+              <img className ="form-icon" src={ChecklistIcon} alt ='Checklist icon'></img>
+
+              <h2 className ="mb-4">How can All-Rite help you?</h2>
+              <div className="col-12">
           <input 
           className = "mr-2"
             type ="checkbox" 

@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import CalendarIcon from './calendar.svg';
+
+
 
 class FormDate extends Component {
     constructor(props) {
@@ -9,6 +12,8 @@ class FormDate extends Component {
 
         return (
             <div>
+            <img className ="form-icon" src={CalendarIcon} alt ='Checklist icon'></img>
+
             <h2 className ="mb-4">What day would you like to move?</h2>
             <div className="form-group row">
               <div className="col-6">

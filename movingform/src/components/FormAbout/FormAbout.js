@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import person from './person.svg'
 
 class FormAbout extends Component {
     constructor(props) {
@@ -9,9 +10,11 @@ class FormAbout extends Component {
         const {handleChange, firstName, lastName, email, phoneNumber } = this.props;
         return (
             <div className="form-section">
+            <img className ="customer-icon" src={person} alt ='Customer Profile Icon'></img>
+
             <h2 className ="mb-4">Tell us about yourself</h2>
             <div className="form-group form-row row mb-2">
-              <div className="col-sm-12">
+              <div className="col-sm-6 mx-auto">
                 <input
                   className="form-control"
                   id="firstName"
@@ -25,7 +28,7 @@ class FormAbout extends Component {
               </div>
             </div>
             <div className="form-group form-row row mb-2">
-              <div className="col-sm-12">
+            <div className="col-sm-6 mx-auto">
                 <input
                   className="form-control"
                   id="lastName"
@@ -39,7 +42,7 @@ class FormAbout extends Component {
             </div>
             
             <div className="form-group form-row row mb-2">
-              <div className="col-sm-12">
+            <div className="col-sm-6 mx-auto">
                 <input
                   className="form-control"
                   id="email"
@@ -52,7 +55,7 @@ class FormAbout extends Component {
               </div>
             </div>
             <div className="form-group form-row row mb-2">
-              <div className="col-sm-12">
+            <div className="col-sm-6 mx-auto">
                 <input
                   className="form-control"
                   id="phoneNumber"

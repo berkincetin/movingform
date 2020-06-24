@@ -13,7 +13,7 @@ class FormHome extends Component {
         return (
             <div>
                 <img className ="truck-icon" src={TruckIcon} alt ='Moving truck icon'></img>
-                <h3 className="mb-5">Let's get you moving!</h3>
+                <h2>Let's get you moving!</h2>
                 <p onClick = {() => onRouteChange(2)} className ="btn book-your-move">Book your move</p>
             </div>
         )

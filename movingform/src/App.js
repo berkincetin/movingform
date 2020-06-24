@@ -136,7 +136,7 @@ class App extends Component {
       case 2: 
         if (this.state.firstName ==="" || this.state.lastName ==="" || this.state.phoneNumber ==="" || this.state.email ==="") {
           console.log(this.state.firstName==="")
-            //alert(`Please enter fill out all the form information`)
+          alert(`Please enter fill out all the form information`)
 
           return false;
         } else {
@@ -144,17 +144,24 @@ class App extends Component {
         }
       case 3:
         if (this.state.movingServices === false && this.state.supplyServices===false && this.state.storageServices === false && this.state.packingServices === false  && this.state.rearrangingServices ===false) {
-          //alert(`Please pick a service`)
+          alert(`Please pick a service`)
 
           return false;
         } else {
           return true;
         }
       case 4:
-        return true;
+        if (this.state.movingDate ==="" || this.state.movingTime==='') {
+          alert(`Please pick a moving date and time`);
+          return false;
+        } else {
+          return true;
+        }
       case 5:
         return true;
       case 6:
+        return true;
+      case 7:
         return true;
     }
   }

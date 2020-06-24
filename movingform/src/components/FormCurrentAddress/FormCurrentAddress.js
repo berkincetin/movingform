@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './FormCurrentAddress.css';
+import AddressIcon from './adress.svg';
 
 const google = window.google;
 
@@ -50,6 +51,8 @@ class FormCurrentAddress extends React.Component {
     render() {
         return(
             <div className="form-section">
+            <img className ="form-icon" src={AddressIcon} alt ='Checklist icon'></img>
+
             <h2 className ="mb-4">What is your current address?</h2>
             <div className="form-group form-row row mb-2">
                 <div className="col-12 mb-5">

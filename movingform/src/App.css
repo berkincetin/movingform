@@ -5,7 +5,7 @@
 
 .App {
   text-align: center;
-  background: #e5e5e5;
+  background: #f1f1f1;
   padding-bottom: 50px;
 }
 
@@ -35,19 +35,15 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
 
 .header {
   background: #fff;
 }
 /* Next buttons stlying */
+.btn {
+  margin-top: 30px;
+}
 .btn-primary:hover {
   color: #fff;
   background-color: #FF5829;
@@ -58,6 +54,7 @@
 .form-wrapper {
   background: #fff;
   width: 50%;
+  height: 700px;
   margin: 0 auto;
   padding: 50px;
 }
@@ -79,4 +76,17 @@
 .truck-icon {
   display: block;
   margin: 0 auto 20px auto;
+}
+
+.form-icon, .customer-icon {
+  width: 75px;
+  height: auto;
+}
+
+@media only screen and (max-width: 767px) {
+
+  .form-wrapper {
+    width: 80%;
+
+  }
 }
