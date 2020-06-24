@@ -4,6 +4,7 @@ class FormSuccess extends Component {
     constructor(props) {
         super(props);
     }
+
     render () {
         const { _next } = this.props;
         return (

@@ -74,7 +74,10 @@ class App extends Component {
     });
     console.log(this.state);
   }
-
+  goHome() {
+    const url = "https://bcetin14.wixsite.com/allrite-movers";
+    window.open(url,"_self");
+  }
   renderSwitch(movingFormStep) {
     switch(movingFormStep) {
       case 1:
@@ -177,13 +180,18 @@ class App extends Component {
     console.log("State", this.state);
     let formValid = this.validateFormInput(currentStep)
     formValid =true;
+    if (currentStep === 7) {
+      this.goHome()
+    } else {
+      if (formValid) {
+        currentStep =  currentStep + 1
+        this.setState({
+          currentStep: currentStep
+        })
+        
+      } 
+    }
 
-    if (formValid) {
-      currentStep = currentStep >= 7 ? 1: currentStep + 1
-      this.setState({
-        currentStep: currentStep
-      })
-    } 
 
   }
   _prev = () => {
