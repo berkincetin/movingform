@@ -23,16 +23,21 @@ class FormServices extends Component {
          <label>I need to move!</label>
         </div>
 
-        <div>
-          <input 
-          className = "mr-2"
-            type ="checkbox" 
-            name="supplyServices" 
-            id="supplyServices" 
-            defaultChecked = {supplyServices}
-            onClick={handleCheck.bind(this)} 
-          />
-         <label>I need moving supplies</label>
+        <div className="form-group form-row row">
+          <div>
+            <input 
+            className = "mr-2"
+              type ="checkbox" 
+              name="supplyServices" 
+              id="supplyServices" 
+              defaultChecked = {supplyServices}
+              onClick={handleCheck.bind(this)} 
+            />
+          </div>
+          <div className="col-8">
+          <label>I need moving supplies</label>
+
+          </div>
         </div>
         <div>
           <input 

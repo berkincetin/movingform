@@ -35,6 +35,10 @@ class FormReview extends Component {
         console.log("Moving Date",movingDate);
         return (
             <div>
+                <h2>Your moving date is:</h2>
+                <p>{movingDate}</p>
+                <p>{movingTime}</p>
+
                 <h2>Based on your information {firstName}, your move will cost:</h2>
                 {movingServices === false ? '': <p>Moving Services: $400</p> }
                 {supplyServices === false ? '': <p>Supply Services: $200</p> }
@@ -43,9 +47,6 @@ class FormReview extends Component {
                 {rearrangingServices === false ? '': <p>Rearranging Services: $100</p> }
                 <h3>Your total is: ${quoteTotal}</h3>
 
-                <h2>Your moving date is:</h2>
-                <p>{movingDate}</p>
-                <p>{movingTime}</p>
 
 
             </div>

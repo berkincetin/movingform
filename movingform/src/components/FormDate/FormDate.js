@@ -15,8 +15,8 @@ class FormDate extends Component {
             <img className ="form-icon" src={CalendarIcon} alt ='Checklist icon'></img>
 
             <h2 className ="mb-4">What day would you like to move?</h2>
-            <div className="form-group row">
-              <div className="col-6">
+            <div className="form-group form-row row">
+            <div className="col-6 mx-auto">
                 <label htmlFor="movingDate">Moving Date</label>
                 <input
                   className="form-control"
@@ -27,7 +27,10 @@ class FormDate extends Component {
                   onChange={handleChange}
                 />   
             </div>
-            <div className="col-6">
+            </div>
+            <div className="form-group form-row row">
+
+            <div className="col-6 mx-auto">
                 <label htmlFor="movingDate">Moving Time</label>
                 <input
                   className="form-control"
@@ -39,9 +42,7 @@ class FormDate extends Component {
                 />   
             </div>
           </div>
-          <div className="col-4 mx-auto">
-    
-          </div>
+
             </div>
         )
     }
