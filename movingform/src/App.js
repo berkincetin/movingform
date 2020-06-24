@@ -9,6 +9,8 @@ import FormDate from './components/FormDate/FormDate';
 import FormSuccess from './components/FormSuccess/FormSuccess';
 import FormReview from './components/FormReview/FormReview';
 
+import emailjs from 'emailjs-com';
+//import { ToastContainer, toast } from 'react-toastify';
 
 const initialState = {
   currentStep: 1,
@@ -78,6 +80,37 @@ class App extends Component {
     const url = "https://bcetin14.wixsite.com/allrite-movers";
     window.open(url,"_self");
   }
+  sendMessage(event) {
+    event.preventDefault();
+    console.log(event);
+
+        var template_params = {
+           "reply_to": "reply_to_value",
+           "to_name": "All-Rite Movers",
+           "from_name": this.state.firstName + ' ' +this.state.lastName,
+           "firstName": this.state.firstName ,
+           "lastName": this.state.lastName,
+           "email": this.state.email,
+           "phone": this.state.phoneNumber,
+           "movingDate": this.state.movingDate,
+           "movingTime": this.state.movingTime,
+           "movingServices": this.state.movingServices,
+           "supplyServices": this.state.supplyServices,
+           "storageServices": this.state.storageServices,
+           "packingServices": this.state.packingServices,
+           "rearrangingServices": this.state.rearrangingServices
+        }
+        var service_id = "gmail";
+        var template_id = "template_9o1HDHgp";
+        var user_id = "user_l50RCXdnmPrK1z6Us7fP5";
+        emailjs.send(service_id, template_id, template_params,user_id)
+
+        this.setState({
+          initialState
+        })   
+    this._next();
+
+  }
   renderSwitch(movingFormStep) {
     switch(movingFormStep) {
       case 1:
@@ -132,6 +165,9 @@ class App extends Component {
       case 7:
         return <FormSuccess 
           _next =  {this._next}/>
+      default:
+        return <FormHome onRouteChange={this.onRouteChange}/>
+
     }
   }
   validateFormInput(currentStep) {
@@ -166,17 +202,19 @@ class App extends Component {
         return true;
       case 7:
         return true;
+      default:
+        return true;
     }
   }
 
   _next = () => {
     let currentStep = this.state.currentStep;
-    const { 
-              firstName, 
-              lastName, 
-              email, 
-              phoneNumber, 
-          } = this.state
+    // const { 
+    //           firstName, 
+    //           lastName, 
+    //           email, 
+    //           phoneNumber, 
+    //       } = this.state
     console.log("State", this.state);
     let formValid = this.validateFormInput(currentStep)
     // formValid =true;
@@ -225,12 +263,12 @@ class App extends Component {
         Next
         </button>        
       )
-    } else if (currentStep == 6) {
+    } else if (currentStep === 6) {
       return (      
       
       <button 
       className="btn  btn-success float-right"
-      type="button" onClick={this._next}>
+      type="button" onClick={this.sendMessage.bind(this)}>
       Let's get you moving!
       </button>
       )

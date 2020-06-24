@@ -6,9 +6,7 @@ const storageRate = 200;
 const packingRate=300;
 const rearrangingRate = 100;
 class FormReview extends Component {
-    constructor(props) {
-        super(props);
-    }
+
     calculateQuoteTotal(movingServices,supplyServices,storageServices, packingServices, rearrangingServices) {
         let quoteTotal = 0;
         if (movingServices) {
@@ -30,7 +28,8 @@ class FormReview extends Component {
     }
     
     render () {
-        const {handleChange, firstName, lastName, email, phoneNumber, movingServices, supplyServices,storageServices, packingServices, rearrangingServices, movingDate, movingTime } = this.props;
+        const { firstName, movingServices, supplyServices,storageServices, packingServices, rearrangingServices, movingDate, movingTime } = this.props;
+        
         const quoteTotal = this.calculateQuoteTotal(movingServices,supplyServices,storageServices, packingServices, rearrangingServices);
         console.log("Moving Date",movingDate);
         return (

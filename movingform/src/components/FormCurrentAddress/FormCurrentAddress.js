@@ -5,7 +5,7 @@ import AddressIcon from './adress.svg';
 const google = window.google;
 
 
-class FormCurrentAddress extends React.Component {
+class FormCurrentAddress extends Component {
     constructor(props) {
         super(props)
         this.state = this.initialState()
@@ -33,10 +33,10 @@ class FormCurrentAddress extends React.Component {
         this.clearForm()
       }
       handlePlaceSelect() {
-        const { handleAddressChange } = this.props;
-        let addressObject = this.autocomplete.getPlace()
-        let address = addressObject.address_components;
-        let addressName = addressObject.formatted_address;
+       // const { handleAddressChange } = this.props;
+       let addressObject = this.autocomplete.getPlace()
+       // let address = addressObject.address_components;
+        //let addressName = addressObject.formatted_address;
 
         // this.setState({
         //   name: addressObject.name,

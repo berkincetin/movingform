@@ -1,9 +1,7 @@
 import React, {Component } from 'react';
 import ChecklistIcon from './Checklist.svg';
 class FormServices extends Component {
-    constructor(props){
-        super(props);
-    }
+
     render () {
         const { handleCheck, movingServices, supplyServices, storageServices, packingServices, rearrangingServices } = this.props;
         return (

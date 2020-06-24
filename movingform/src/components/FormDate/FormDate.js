@@ -4,9 +4,7 @@ import CalendarIcon from './calendar.svg';
 
 
 class FormDate extends Component {
-    constructor(props) {
-        super(props);
-    }
+
     render () {
         const { handleChange, movingDate, movingTime } = this.props;
 

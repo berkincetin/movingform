@@ -4,10 +4,7 @@ import TruckIcon from './TruckIcon.png'
 
 
 class FormHome extends Component {
-    constructor(props) {
-        super(props);
 
-        }
     render () {
         const { onRouteChange } = this.props;
         return (

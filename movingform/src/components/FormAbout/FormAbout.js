@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import person from './person.svg'
 
 class FormAbout extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render () {
         const {handleChange, firstName, lastName, email, phoneNumber } = this.props;

@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import BoxIcon from './BoxIcon.png';
 class FormSuccess extends Component {
-    constructor(props) {
-        super(props);
-    }
+
 
     render () {
         const { _next } = this.props;
