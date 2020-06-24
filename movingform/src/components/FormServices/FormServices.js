@@ -9,6 +9,8 @@ class FormServices extends Component {
               <img className ="form-icon" src={ChecklistIcon} alt ='Checklist icon'></img>
 
               <h2 className ="mb-4">How can All-Rite help you?</h2>
+              <h3 className ="mb-4">Please select all the services you need</h3>
+
               <div className="form-group services-row form-row row">
 
                   <input 
@@ -34,6 +36,37 @@ class FormServices extends Component {
               />
             <label className="my-auto">I need moving supplies</label>
             </div>
+            {supplyServices === true ? 
+            <div>            
+                <div className="form-group services-sub-row form-row row">
+                <input 
+                className = "mr-2"
+                  type ="checkbox" 
+                  name="supplyServicesBoxes" 
+                  id="supplyServicesBoxes" 
+                />
+                <label className="my-auto">I need boxes</label>
+                </div>
+                <div className="form-group services-sub-row form-row row">
+                <input 
+                className = "mr-2"
+                  type ="checkbox" 
+                  name="supplyServicesFiller" 
+                  id="supplyServicesFiller" 
+                />
+                <label className="my-auto">I need filler</label>
+                </div>
+                <div className="form-group services-sub-row form-row row">
+                <input 
+                className = "mr-2"
+                  type ="checkbox" 
+                  name="supplyServicesCovers" 
+                  id="supplyServicesCovers" 
+                />
+                <label className="my-auto">I need covers</label>
+            </div>
+          </div> 
+            : ''}
             <div className="form-group services-row form-row row">
               <input 
               className = "mr-2"
