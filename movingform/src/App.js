@@ -43,10 +43,10 @@ class App extends Component {
   this.setState({currentStep:currentStep})
   }
   handleChange = event => {
-    console.log("Event",event)
-    console.log("Event target", event.target)
-    console.log("Event target name", event.target.name)
-    console.log("Event target value", event.target.value)
+    // console.log("Event",event)
+    // console.log("Event target", event.target)
+    // console.log("Event target name", event.target.name)
+    // console.log("Event target value", event.target.value)
 
     const {name, value} = event.target
     this.setState({
@@ -57,9 +57,9 @@ class App extends Component {
 
   handleCheck = event => {
     const {name,checked} = event.target;
-    console.log("Event Target", event.target)
-    console.log("Name", name); 
-    console.log("Checked", checked); 
+    // console.log("Event Target", event.target)
+    // console.log("Name", name); 
+    // console.log("Checked", checked); 
     this.setState({
       [name]: checked
     })   
@@ -179,7 +179,7 @@ class App extends Component {
           } = this.state
     console.log("State", this.state);
     let formValid = this.validateFormInput(currentStep)
-    formValid =true;
+    // formValid =true;
     if (currentStep === 7) {
       this.goHome()
     } else {
