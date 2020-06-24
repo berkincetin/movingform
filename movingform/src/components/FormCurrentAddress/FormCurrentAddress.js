@@ -55,7 +55,7 @@ class FormCurrentAddress extends React.Component {
 
             <h2 className ="mb-4">What is your current address?</h2>
             <div className="form-group form-row row mb-2">
-                <div className="col-12 mb-5">
+                <div className="col-8 mx-auto mb-5">
                     <input id="autocomplete"
                     className="form-control"
                     name="inputAddress"

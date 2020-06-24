@@ -5,7 +5,7 @@
 
 .App {
   text-align: center;
-  background: #f1f1f1;
+  background: rgba(0,138,252,0.1);
   padding-bottom: 50px;
 }
 
@@ -20,25 +20,12 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
 
 
 
 .header {
-  background: #fff;
+  background: rgba(0,138,252,1);
+  color: #fff;
 }
 /* Next buttons stlying */
 .btn {
@@ -57,6 +44,9 @@
   height: 700px;
   margin: 0 auto;
   padding: 50px;
+  -webkit-box-shadow: 2px 4px 25px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px 4px 25px -4px rgba(0,0,0,0.75);
+box-shadow: 2px 4px 25px -4px rgba(0,0,0,0.75);
 }
 
 
