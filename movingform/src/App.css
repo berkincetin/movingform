@@ -51,6 +51,11 @@
 -moz-box-shadow: 2px 4px 25px -4px rgba(0,0,0,0.75);
 box-shadow: 2px 4px 25px -4px rgba(0,0,0,0.75);
 }
+.progressBar {
+  margin: 0 auto;
+  width: 50%;
+
+}
 
 
 .book-your-move {

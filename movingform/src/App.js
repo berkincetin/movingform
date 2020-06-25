@@ -10,6 +10,7 @@ import FormSuccess from './components/FormSuccess/FormSuccess';
 import FormReview from './components/FormReview/FormReview';
 import FormMovingNeeds from './components/FormMovingNeeds/FormMovingNeeds';
 
+import ProgressBar from 'react-bootstrap/ProgressBar'
 import emailjs from 'emailjs-com';
 //import { ToastContainer, toast } from 'react-toastify';
 
@@ -44,7 +45,9 @@ const initialState = {
   basementAmount:0,
   atticAmount:0,
   officeAmount:0,
-  otherRoomAmount:0
+  otherRoomAmount:0,
+
+  formProgressBar: 0
 
 }
 
@@ -257,8 +260,10 @@ class App extends Component {
     } else {
       if (formValid) {
         currentStep =  currentStep + 1
+        let progessValue =(currentStep-1)*100/7;
         this.setState({
-          currentStep: currentStep
+          currentStep: currentStep,
+          formProgressBar: progessValue
         })
         
       } 
@@ -270,7 +275,9 @@ class App extends Component {
     let currentStep = this.state.currentStep
     currentStep = currentStep <= 1? 1: currentStep - 1
     this.setState({
-      currentStep: currentStep
+      currentStep: currentStep,
+      formProgressBar: (currentStep-1)*100/7
+
     })
   }
 
@@ -321,9 +328,13 @@ class App extends Component {
 
           {this.previousButton()}
           {this.nextButton()}
-
         </div>
+        {
+          currentStep === 1 || currentStep === 9 ? '' : <div className="progressBar"><ProgressBar now={this.state.formProgressBar} /></div>
+        } 
+
       </div>
+
 
     )
   }
