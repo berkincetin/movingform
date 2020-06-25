@@ -1,26 +1,27 @@
 {
   "files": {
-    "main.css": "/movingform/static/css/main.37fbfb83.chunk.css",
-    "main.js": "/movingform/static/js/main.ba522407.chunk.js",
-    "main.js.map": "/movingform/static/js/main.ba522407.chunk.js.map",
+    "main.css": "/movingform/static/css/main.de098be5.chunk.css",
+    "main.js": "/movingform/static/js/main.0245f153.chunk.js",
+    "main.js.map": "/movingform/static/js/main.0245f153.chunk.js.map",
     "runtime-main.js": "/movingform/static/js/runtime-main.1c9ec415.js",
     "runtime-main.js.map": "/movingform/static/js/runtime-main.1c9ec415.js.map",
-    "static/js/2.b3379af3.chunk.js": "/movingform/static/js/2.b3379af3.chunk.js",
-    "static/js/2.b3379af3.chunk.js.map": "/movingform/static/js/2.b3379af3.chunk.js.map",
+    "static/js/2.3e213904.chunk.js": "/movingform/static/js/2.3e213904.chunk.js",
+    "static/js/2.3e213904.chunk.js.map": "/movingform/static/js/2.3e213904.chunk.js.map",
     "index.html": "/movingform/index.html",
-    "precache-manifest.9e3b86656bc3802a142708150ad4957c.js": "/movingform/precache-manifest.9e3b86656bc3802a142708150ad4957c.js",
+    "precache-manifest.099a42f0340d389afcb9d0066c4a929e.js": "/movingform/precache-manifest.099a42f0340d389afcb9d0066c4a929e.js",
     "service-worker.js": "/movingform/service-worker.js",
-    "static/css/main.37fbfb83.chunk.css.map": "/movingform/static/css/main.37fbfb83.chunk.css.map",
-    "static/js/2.b3379af3.chunk.js.LICENSE.txt": "/movingform/static/js/2.b3379af3.chunk.js.LICENSE.txt",
+    "static/css/main.de098be5.chunk.css.map": "/movingform/static/css/main.de098be5.chunk.css.map",
+    "static/js/2.3e213904.chunk.js.LICENSE.txt": "/movingform/static/js/2.3e213904.chunk.js.LICENSE.txt",
     "static/media/Checklist.svg": "/movingform/static/media/Checklist.cc82be6c.svg",
     "static/media/adress.svg": "/movingform/static/media/adress.cf5200b4.svg",
     "static/media/calendar.svg": "/movingform/static/media/calendar.88a417ea.svg",
-    "static/media/person.svg": "/movingform/static/media/person.08690989.svg"
+    "static/media/person.svg": "/movingform/static/media/person.08690989.svg",
+    "static/media/travel.svg": "/movingform/static/media/travel.961db2d8.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.1c9ec415.js",
-    "static/js/2.b3379af3.chunk.js",
-    "static/css/main.37fbfb83.chunk.css",
-    "static/js/main.ba522407.chunk.js"
+    "static/js/2.3e213904.chunk.js",
+    "static/css/main.de098be5.chunk.css",
+    "static/js/main.0245f153.chunk.js"
   ]
 }
