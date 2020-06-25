@@ -8,6 +8,7 @@ import FormCurrentAddress from './components/FormCurrentAddress/FormCurrentAddre
 import FormDate from './components/FormDate/FormDate';
 import FormSuccess from './components/FormSuccess/FormSuccess';
 import FormReview from './components/FormReview/FormReview';
+import FormMovingNeeds from './components/FormMovingNeeds/FormMovingNeeds';
 
 import emailjs from 'emailjs-com';
 //import { ToastContainer, toast } from 'react-toastify';
@@ -33,7 +34,18 @@ const initialState = {
   movingFromPostal: '',
 
   movingDate: '',
-  movingTime: ''
+  movingTime: '',
+
+  squareFootage: 0,
+  bedroomAmount: 0,
+  kitchenAmount:0,
+  familyRoomAmount:0,
+  diningRoomAmount:0,
+  basementAmount:0,
+  atticAmount:0,
+  officeAmount:0,
+  otherRoomAmount:0
+
 }
 
 class App extends Component {
@@ -46,7 +58,7 @@ class App extends Component {
   }
   handleChange = event => {
     // console.log("Event",event)
-    // console.log("Event target", event.target)
+    console.log("Event target", event.target)
     // console.log("Event target name", event.target.name)
     // console.log("Event target value", event.target.value)
 
@@ -142,10 +154,28 @@ class App extends Component {
         
         />
       case 5:
-        return <FormCurrentAddress />
-
+        return <FormCurrentAddress
+                addressType = "What is your current address?"
+                moveType ="currentAddress" />
 
       case 6:
+        return <FormCurrentAddress
+        addressType = "What is your destination address?"
+        moveType="destinationAddress" />
+      case 7:
+        return <FormMovingNeeds
+        handleChange = {this.handleChange}
+        squareFootage = {this.state.squareFootage}
+        bedroomAmount = {this.state.bedroomAmount}
+        kitchenAmount = {this.state.kitchenAmount}
+        familyRoomAmount = {this.state.familyRoomAmount}
+        diningRoomAmount = {this.state.diningRoomAmount}
+        basementAmount = {this.state.basementAmount}
+        atticAmount = {this.state.atticAmount}
+        officeAmount = {this.state.officeAmount}
+        otherRoomAmount = {this.state.otherRoomAmount}
+              />
+      case 8:
         return <FormReview 
         handleChange = {this.handleChange}
 
@@ -162,7 +192,7 @@ class App extends Component {
         movingDate = {this.state.movingDate}
         movingTime = {this.state.movingTime}
         />
-      case 7:
+      case 9:
         return <FormSuccess 
           _next =  {this._next}/>
       default:
@@ -175,7 +205,7 @@ class App extends Component {
       case 2: 
         if (this.state.firstName ==="" || this.state.lastName ==="" || this.state.phoneNumber ==="" || this.state.email ==="") {
           console.log(this.state.firstName==="")
-          alert(`Please enter fill out all the form information`)
+         // alert(`Please enter fill out all the form information`)
 
           return false;
         } else {
@@ -183,7 +213,7 @@ class App extends Component {
         }
       case 3:
         if (this.state.movingServices === false && this.state.supplyServices===false && this.state.storageServices === false && this.state.packingServices === false  && this.state.rearrangingServices ===false) {
-          alert(`Please pick a service`)
+         // alert(`Please pick a service`)
 
           return false;
         } else {
@@ -191,7 +221,7 @@ class App extends Component {
         }
       case 4:
         if (this.state.movingDate ==="" || this.state.movingTime==='') {
-          alert(`Please pick a moving date and time`);
+         // alert(`Please pick a moving date and time`);
           return false;
         } else {
           return true;
@@ -202,6 +232,10 @@ class App extends Component {
         return true;
       case 7:
         return true;
+      case 8:
+        return true;
+      case 9:
+        return true
       default:
         return true;
     }
@@ -217,8 +251,8 @@ class App extends Component {
     //       } = this.state
     console.log("State", this.state);
     let formValid = this.validateFormInput(currentStep)
-    // formValid =true;
-    if (currentStep === 7) {
+    formValid =true;
+    if (currentStep === 9) {
       this.goHome()
     } else {
       if (formValid) {
@@ -242,7 +276,7 @@ class App extends Component {
 
   previousButton() {
     let currentStep = this.state.currentStep;
-    if(currentStep > 2 && currentStep < 7){
+    if(currentStep > 2 && currentStep < 9){
       return (
         <button 
           className="btn btn-secondary float-left" 
@@ -255,7 +289,7 @@ class App extends Component {
   }
   nextButton(){
     let currentStep = this.state.currentStep;
-    if(currentStep >1 && currentStep <6){
+    if(currentStep >1 && currentStep <8){
       return (
         <button 
           className="btn btn-primary float-right" 
@@ -263,7 +297,7 @@ class App extends Component {
         Next
         </button>        
       )
-    } else if (currentStep === 6) {
+    } else if (currentStep === 8) {
       return (      
       
       <button 

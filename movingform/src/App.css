@@ -92,6 +92,12 @@ box-shadow: 2px 4px 25px -4px rgba(0,0,0,0.75);
   margin-right: auto;
 }
 
+.movingNeedsLabel {
+  margin-right: 20px;
+  width: 100px;
+}
+
+
 @media only screen and (max-width: 767px) {
 
   .form-wrapper {

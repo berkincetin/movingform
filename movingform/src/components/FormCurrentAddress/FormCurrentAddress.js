@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './FormCurrentAddress.css';
 import AddressIcon from './adress.svg';
+import DestinationIcon from './travel.svg';
 
 const google = window.google;
 
@@ -49,11 +50,17 @@ class FormCurrentAddress extends Component {
       }
     
     render() {
+        const {addressType,moveType  } =this.props;
         return(
             <div className="form-section">
+            {moveType === 'currentAddress' ? 
             <img className ="form-icon" src={AddressIcon} alt ='Checklist icon'></img>
+            :
+            <img className ="form-icon" src={DestinationIcon} alt ='Checklist icon'></img>
 
-            <h2 className ="mb-4">What is your current address?</h2>
+            }
+
+            <h2 className ="mb-4">{addressType}</h2>
             <div className="form-group form-row row mb-2">
                 <div className="col-8 mx-auto mb-5">
                     <input id="autocomplete"
