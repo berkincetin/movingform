@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import AddressIcon from './adress.svg';
+import DestinationIcon from './travel.svg';
 
 const google = window.google;
 
 
-class FormCurrentAddress extends Component {
+class FormDestinationAddress extends Component {
     constructor(props) {
         super(props)
         this.state = this.initialState()
@@ -14,7 +14,7 @@ class FormCurrentAddress extends Component {
         this.autocomplete = null
     }
     componentDidMount() {
-        this.autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'), {})
+        this.autocomplete = new google.maps.places.Autocomplete(document.getElementById('destinationautocomplete'), {})
     
         this.autocomplete.addListener("place_changed", this.handlePlaceSelect)
       }
@@ -48,16 +48,14 @@ class FormCurrentAddress extends Component {
       }
     
     render() {
-        const {addressType } =this.props;
+        const {addressType  } =this.props;
         return(
             <div className="form-section">
-            <img className ="form-icon" src={AddressIcon} alt ='Checklist icon'></img>
-  
-
+            <img className ="form-icon" src={DestinationIcon} alt ='Checklist icon'></img>
             <h2 className ="mb-4">{addressType}</h2>
             <div className="form-group form-row row mb-2">
                 <div className="col-8 mx-auto mb-5">
-                    <input id="autocomplete"
+                    <input id="destinationautocomplete"
                     className="form-control"
                     name="inputAddress"
                     onChange= {this.handleChange}
@@ -73,4 +71,4 @@ class FormCurrentAddress extends Component {
 
 }
 
-export default FormCurrentAddress;
+export default FormDestinationAddress;

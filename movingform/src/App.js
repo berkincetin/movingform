@@ -5,6 +5,7 @@ import FormHome from './components/FormHome/FormHome';
 import FormAbout from './components/FormAbout/FormAbout';
 import FormServices from './components/FormServices/FormServices';
 import FormCurrentAddress from './components/FormCurrentAddress/FormCurrentAddress';
+import FormDestinationAddress from './components/FormDestinationAddress/FormDestinationAddress';
 import FormDate from './components/FormDate/FormDate';
 import FormSuccess from './components/FormSuccess/FormSuccess';
 import FormReview from './components/FormReview/FormReview';
@@ -162,12 +163,12 @@ class App extends Component {
       case 5:
         return <FormCurrentAddress
                 addressType = "What is your current address?"
-                moveType ="currentAddress" />
+                />
 
       case 6:
-        return <FormCurrentAddress
+        return <FormDestinationAddress
         addressType = "What is your destination address?"
-        moveType="destinationAddress" />
+      />
       case 7:
         return <FormMovingNeeds
         handleChange = {this.handleChange}
@@ -197,6 +198,17 @@ class App extends Component {
         
         movingDate = {this.state.movingDate}
         movingTime = {this.state.movingTime}
+
+        squareFootage = {this.state.squareFootage}
+        bedroomAmount= {this.state.bedroomAmount}
+        kitchenAmount= {this.state.kitchenAmount}
+        familyRoomAmount= {this.state.familyRoomAmount}
+        diningRoomAmount= {this.state.diningRoomAmount}
+        basementAmount= {this.state.basementAmount}
+        atticAmount= {this.state.atticAmount}
+        officeAmount= {this.state.officeAmount}
+        otherRoomAmount= {this.state.otherRoomAmount}
+      
         />
       case 9:
         return <FormSuccess 
