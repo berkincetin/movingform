@@ -57,7 +57,10 @@ class App extends Component {
     this.state = initialState;
   }
   onRouteChange = (currentStep) => {
-  this.setState({currentStep:currentStep})
+  this.setState({
+    currentStep:currentStep,      
+    formProgressBar: (currentStep-1)*100/7
+  })
   }
   handleChange = event => {
     // console.log("Event",event)
@@ -259,6 +262,7 @@ class App extends Component {
       this.goHome()
     } else {
       if (formValid) {
+        console.log(currentStep)
         currentStep =  currentStep + 1
         let progessValue =(currentStep-1)*100/7;
         this.setState({
