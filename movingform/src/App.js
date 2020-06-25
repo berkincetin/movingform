@@ -211,7 +211,7 @@ class App extends Component {
       case 2: 
         if (this.state.firstName ==="" || this.state.lastName ==="" || this.state.phoneNumber ==="" || this.state.email ==="") {
           console.log(this.state.firstName==="")
-         // alert(`Please enter fill out all the form information`)
+         alert(`Please enter fill out all the form information`)
 
           return false;
         } else {
@@ -219,7 +219,7 @@ class App extends Component {
         }
       case 3:
         if (this.state.movingServices === false && this.state.supplyServices===false && this.state.storageServices === false && this.state.packingServices === false  && this.state.rearrangingServices ===false) {
-         // alert(`Please pick a service`)
+         alert(`Please pick a service`)
 
           return false;
         } else {
@@ -227,7 +227,7 @@ class App extends Component {
         }
       case 4:
         if (this.state.movingDate ==="" || this.state.movingTime==='') {
-         // alert(`Please pick a moving date and time`);
+         alert(`Please pick a moving date and time`);
           return false;
         } else {
           return true;
@@ -237,7 +237,24 @@ class App extends Component {
       case 6:
         return true;
       case 7:
-        return true;
+        if ( this.state.squareFootage === 0 || 
+          (this.state.bedroomAmount===0 
+          && this.state.kitchenAmount === 0 
+          && this.state.familyRoomAmount === 0
+          && this.state.diningRoomAmount === 0 
+          && this.state.basementAmount === 0 
+          && this.state.atticAmount === 0 
+          && this.state.officeAmount === 0 
+          && this.state.otherRoomAmount === 0 
+
+          )) {
+            alert(`Please enter a square footage and pick a room`);
+
+            return false;
+          }
+        else {
+          return true;
+        }
       case 8:
         return true;
       case 9:
@@ -257,7 +274,7 @@ class App extends Component {
     //       } = this.state
     console.log("State", this.state);
     let formValid = this.validateFormInput(currentStep)
-    formValid =true;
+    //formValid =true;
     if (currentStep === 9) {
       this.goHome()
     } else {
@@ -334,7 +351,7 @@ class App extends Component {
           {this.nextButton()}
         </div>
         {
-          currentStep === 1 || currentStep === 9 ? '' : <div className="progressBar"><ProgressBar now={this.state.formProgressBar} /></div>
+          currentStep === 9 ? '' : <div className="progressBar"><ProgressBar now={this.state.formProgressBar} /></div>
         } 
 
       </div>
