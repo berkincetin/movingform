@@ -276,7 +276,7 @@ class App extends Component {
 
   previousButton() {
     let currentStep = this.state.currentStep;
-    if(currentStep > 2 && currentStep < 9){
+    if(currentStep > 1 && currentStep < 9){
       return (
         <button 
           className="btn btn-secondary float-left" 

@@ -1,4 +1,5 @@
 import React, {Component } from 'react';
+import MovingHouseIcon from './property.svg';
 
 class FormMovingNeeds extends Component {
 
@@ -18,8 +19,9 @@ class FormMovingNeeds extends Component {
         console.log('SquareFootage',squareFootage);
         return (
             <div className="form-section">
-                <h2 className ="mb-4">Moving Needs</h2>
-              <h3 className ="mb-4">What is the estimated square footage of your? Your square footage will help us give you a guesstimate on your moving quote</h3>
+            <img className ="customer-icon" src={MovingHouseIcon} alt ='Customer Profile Icon'></img>
+            <h2 className ="mb-4">Moving Needs</h2>
+              <h3 className ="mb-4">What is the estimated square footage of your home? Your square footage will help us give you a guesstimate on your moving quote</h3>
               <h4 className ="mb-4">If you don't know your square footage take your best guess! (A 3 bedroom home is on average 1500 square feet)</h4>
               
               <div className="form-group form-row row">
